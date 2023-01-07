@@ -1,10 +1,10 @@
 type Query {
-    movie(id: ID!):  Movie
+    movie(id: Int!):  Movie
     movies: [Movie!]
 }
 
 type Movie {
-    id: ID!,
+    id: Int!,
     title: String!,
     tagline: String,
     vote_average: Float!,
