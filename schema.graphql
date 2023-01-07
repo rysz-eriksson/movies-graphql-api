@@ -12,8 +12,8 @@ type Movie {
     release_date: String!,
     poster_path: String,
     overview: String,
-    budget: Int!,
-    revenue: Int!,
+    budget: Float,
+    revenue: Float,
     genres: [String!]!,
-    runtime: Int!   
+    runtime: Int   
 }
