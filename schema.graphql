@@ -1,3 +1,19 @@
 type Query {
-  greeting: String
+    movie(id: ID!):  Movie
+    movies: [Movie!]
+}
+
+type Movie {
+    id: ID!,
+    title: String!,
+    tagline: String,
+    vote_average: Float!,
+    vote_count: Int!,
+    release_date: String!,
+    poster_path: String,
+    overview: String,
+    budget: Int!,
+    revenue: Int!,
+    genres: [String!]!,
+    runtime: Int!   
 }

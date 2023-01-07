@@ -1,5 +1,8 @@
+import { Movies } from "./db.js";
+
 export const resolvers = {
     Query: {
-      greeting: () => 'Hello world!',
+        movie: (root, {id}) => Movies.findById(id),
+        movies: () => Movies.findAll()
     },
   };
