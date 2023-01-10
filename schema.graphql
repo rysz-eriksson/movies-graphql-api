@@ -1,6 +1,6 @@
 type Query {
     movie(id: Int!):  Movie
-    movies: [Movie!]
+    movies(input: MoviesInput): [Movie!]
 }
 
 type Movie {
@@ -16,4 +16,23 @@ type Movie {
     revenue: Float,
     genres: [String!]!,
     runtime: Int   
+}
+
+input MoviesFilters {
+    byTitle: String
+    byGenre: String
+}
+
+enum SortByCriteria {
+    RUNTIME
+    RELEASE_DATE
+}
+
+input MoviesSort {
+    criteria: String
+}
+
+input MoviesInput {
+    filterBy: MoviesFilters
+    sortBy: SortByCriteria
 }
