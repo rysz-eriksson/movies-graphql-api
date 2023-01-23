@@ -44,4 +44,16 @@ export const resolvers = {
         }
         
     },
+
+    Mutation: {
+        addMovie: (_root, {input}) => {
+            return Movies.create(input)
+        },
+        deleteMovie: async (_root, { id }) => {
+            return Movies.delete(id);
+          },
+        editMovie: async (_root, {input}) => {
+            return Movies.update(input)
+        }
+    }
   };

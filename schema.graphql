@@ -3,6 +3,12 @@ type Query {
     movies(input: MoviesInput): [Movie!]
 }
 
+type Mutation {
+    addMovie(input: MovieInput!): Movie
+    deleteMovie(id: Int!): Movie
+    editMovie(input: MovieInput!): Movie
+}
+
 type Movie {
     id: Int!,
     title: String!,
@@ -16,6 +22,21 @@ type Movie {
     revenue: Float,
     genres: [String!]!,
     runtime: Int   
+}
+
+input MovieInput {
+    id: Int!,
+    title: String!,
+    tagline: String,
+    vote_average: Float!,
+    vote_count: Int!,
+    release_date: String!,
+    poster_path: String,
+    overview: String,
+    budget: Float,
+    revenue: Float,
+    genres: [String!]!,
+    runtime: Int  
 }
 
 input MoviesFilters {
